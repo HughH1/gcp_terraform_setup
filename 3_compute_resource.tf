@@ -1,8 +1,8 @@
-resource "google_compute_instance" "database" {
-name = "${var.name}"
+resource "google_compute_instance" "backend" {
+name = "${var.name1}"
 machine_type = "${var.machine_type}"
 zone = "${var.zone}"
-tags = ["${var.name}"]
+tags = ["${var.name1}"]
 boot_disk{
 initialize_params {
 image = "${var.image}"
@@ -21,7 +21,7 @@ metadata = {
 connection  {
 type = "ssh"
 user = "${var.ssh_user}"
-host = "${google_compute_instance.database.network_interface.0.access_config.0.nat_ip}"
+host = "${google_compute_instance.backend.network_interface.0.access_config.0.nat_ip}"
 private_key = "${file("${var.private_key}")}"
 }
 
@@ -33,6 +33,6 @@ inline = [
 }
 
 provisioner "remote-exec" {
-scripts = "${var.database}"
+scripts = "${var.backend}"
 }
 }

@@ -4,8 +4,14 @@ default = "striped-acrobat-243309"
 }
 
 variable "name" {
-  default = "mean"
+  default = "database"
 }
+
+variable "name1" {
+default = "backend"
+}
+
+
 variable "machine_type" {
   default = "g1-small"
 }
@@ -60,9 +66,14 @@ variable "scripts"{
 default = [ ]
 }
 
-variable "database" {
-  default = ["scripts/mean-script-database"]
+variable "backend" {
+  default = ["scripts/mean-script-backend"]
 }
+
+variable "database" {
+default = ["scripts/mean-script-database"]
+}
+
 
 variable "allowed_ports"{
 default = ["22"]
