@@ -33,6 +33,6 @@ inline = [
 }
 
 provisioner "remote-exec" {
-scripts = "${var.scripts}"
+scripts = "${var.backend}"
 }
 }
