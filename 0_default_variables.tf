@@ -60,7 +60,7 @@ variable "scripts"{
 default = [ ]
 }
 
-variable "database" {
+variable "backend" {
   default = ["scripts/mean-script-backend"]
 }
 
