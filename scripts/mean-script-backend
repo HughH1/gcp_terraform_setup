@@ -1,0 +1,12 @@
+#! /bin/bash
+ 
+cd ~/
+
+rm -fR project_setup_script
+
+git clone https://github.com/HughH1/project_setup_script.git
+
+git checkout backend
+
+./project_setup_script/project_setup.sh
+

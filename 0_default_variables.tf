@@ -57,8 +57,11 @@ default = {
 }
 
 variable "scripts"{
-default = ["scripts/mean-script"]
+default = [ ]
+}
 
+variable "database" {
+  default = ["scripts/mean-script-database"]
 }
 
 variable "allowed_ports"{
